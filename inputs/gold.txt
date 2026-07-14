@@ -1,0 +1,22 @@
+"Gaśnica proszkowa sześć kilo, klatka schodowa parter, ciśnienie w normie, zielone pole, następny przegląd za rok, sprawna."
+{ "device_type": "gaśnica proszkowa", "location": "klatka schodowa, parter",
+  "pressure_bar": null, "capacity": "6 kg", "defects": [], "status": "sprawna",
+  "inspection_date": null, "next_inspection": "za rok" }
+"Hydrant wewnętrzny numer trzy, drugie piętro, wąż przetarty trzeba wymienić, ciśnienie tylko dwa i pół bara za mało, do naprawy."
+{ "device_type": "hydrant wewnętrzny nr 3", "location": "drugie piętro",
+  "pressure_bar": 2.5, "capacity": null, "defects": ["wąż przetarty"],
+  "status": "do_naprawy", "inspection_date": null, "next_inspection": null }
+"Gaśnica CO2 pięć kilogramów, kuchnia na zapleczu, brak plomby, waga poniżej normy, do wymiany, przegląd dzisiaj dziesiątego lipca."
+{ "device_type": "gaśnica CO2", "location": "kuchnia, zaplecze",
+  "pressure_bar": null, "capacity": "5 kg",
+  "defects": ["brak plomby", "waga poniżej normy"],
+  "status": "do_wymiany", "inspection_date": "10 lipca", "next_inspection": null }
+"Hydrant zewnętrzny przy wjeździe, ciśnienie siedem bar wszystko w porządku, sprawny, następny przegląd lipiec dwa tysiące dwadzieścia siedem."
+  { "device_type": "hydrant zewnętrzny", "location": "wjazd",
+  "pressure_bar": 7, "capacity": null, "defects": [],
+  "status": "sprawny", "inspection_date": null, "next_inspection": "lipiec 2027" }
+  "Znaczy tam gaśnica jest, korytarz pierwsze piętro, no data przeglądu minęła w zeszłym miesiącu, reszta wygląda ok."
+  { "device_type": "gaśnica", "location": "korytarz, pierwsze piętro",
+  "pressure_bar": null, "capacity": null,
+  "defects": ["data przeglądu minęła"],
+  "status": null, "inspection_date": null, "next_inspection": null }

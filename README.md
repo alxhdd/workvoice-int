@@ -37,12 +37,12 @@ The two provided gold examples are used as guidelines in the prompt, plus explic
 { "device_type": "gaśnica CO2", "location": "kuchnia, zaplecze",
   "pressure_bar": null, "capacity": "5 kg",
   "defects": ["brak plomby", "waga poniżej normy"],
-  "status": "do_wymiany", "inspection_date": "2026-07-10", "next_inspection": null }
+  "status": "do_wymiany", "inspection_date": "10 lipca", "next_inspection": null }
 
 // Note 4
 { "device_type": "hydrant zewnętrzny", "location": "wjazd",
   "pressure_bar": 7, "capacity": null, "defects": [],
-  "status": "sprawny", "inspection_date": null, "next_inspection": "2027-07" }
+  "status": "sprawny", "inspection_date": null, "next_inspection": "lipiec 2027" }
 
 // Note 5
 { "device_type": "gaśnica", "location": "korytarz, pierwsze piętro",
