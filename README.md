@@ -99,6 +99,9 @@ We have 5 examples and a chicken-and-egg problem. Quick ideas, honestly not sure
 
 - **Track 3 (critic/retry):** designed but not built. The obvious shape: a retry that rewrites the system prompt based on the scoring notes — keep the fields that came out correct, override the prompt for the failed ones, run again. Honestly, with an SLM this may not buy much, which is part of why it got cut first.
 - **Async in the test harness:** pointless at this input size, worthwhile at larger volumes. Cosmetic, but makes life easier. Not now.
+- **Semantics are ambiguous:** some things can be enforced more but it's a question of if and what is actually needed because at this scale it's a tradeoff. 
+
+Next I'd test more, tweak more and look into the track4 stuff alongside track3. I'd love to see how the mobile gemma quants work for this use case (gemma is multimodal which makes it a great fit for this if it can actually run.)
 
 ## Known issues
 
@@ -106,6 +109,7 @@ Found while stress-testing `compare.py` against simulated SLM output (sanity che
 
 - **`null_flood` can never fire on this dataset.** The rule requires gold to have *all* fields populated, but every one of the 5 gold records contains at least one legit null (`pressure_bar` or `capacity`). Nulling 4/8 fields on note 4 scored 0.62 "OK" instead of FAIL. Fix: change the condition to "nulls > 50% of the fields gold actually populated" — one line in `score_entry`. Known, not fixed, out of time.
 - **Preamble text breaks the parser silently.** A classic SLM answer like `Sure! Here is the JSON: {...` doesn't start with `{`, so `parse_entries` treats it as a new *prompt*: the real prompt gets `NO_OUTPUT` instead of `BAD_JSON` and the malformed record is dropped without a trace. The entry still fails (score 0 either way), so not urgent — but `clean_json_output` in harness.py only strips code fences, not preambles, so this will happen with real model output. A regex grabbing from the first `{` in `clean_json_output` covers most of it.
+
 
 ## Issues hit
 
