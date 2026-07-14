@@ -109,12 +109,21 @@ Found while stress-testing `compare.py` against simulated SLM output (sanity che
 
 - **`null_flood` can never fire on this dataset.** The rule requires gold to have *all* fields populated, but every one of the 5 gold records contains at least one legit null (`pressure_bar` or `capacity`). Nulling 4/8 fields on note 4 scored 0.62 "OK" instead of FAIL. Fix: change the condition to "nulls > 50% of the fields gold actually populated" — one line in `score_entry`. Known, not fixed, out of time.
 - **Preamble text breaks the parser silently.** A classic SLM answer like `Sure! Here is the JSON: {...` doesn't start with `{`, so `parse_entries` treats it as a new *prompt*: the real prompt gets `NO_OUTPUT` instead of `BAD_JSON` and the malformed record is dropped without a trace. The entry still fails (score 0 either way), so not urgent — but `clean_json_output` in harness.py only strips code fences, not preambles, so this will happen with real model output. A regex grabbing from the first `{` in `clean_json_output` covers most of it.
+- **Manual input splits lines:** causing errors, dont have time to fix it sadly but currently pasting splits to more than one line->reads as more than one prompt:
+    "Gaśnica CO2 pięć kilogramów, kuchnia na zapleczu, brak plomby, waga poniżej"
+    {"device_type": "gaśnica CO2", "location": "kuchnia na zapleczu", "pressure_bar": null, "capacity": "5 kg", "defects": ["brak plomby"], "status": "do_naprawy", "inspection_date": null, "next_inspection": null}
+
+    "normy, do wymiany, przegląd dzisiaj dziesiątego lipca."
+    {"device_type": null, "location": null, "pressure_bar": null, "capacity": null, "defects": [], "status": "do_wymiany", "inspection_date": "10 lipca", "next_inspection": null}
+
+solution is simple, use a batch or type the prompt.
 
 
 ## Issues hit
 
-- Had to tweak llama.cpp because context leaked between prompts — harness sends `cache_prompt: false` so every request gets a fresh KV cache (context isolation matters here: one dictation must never bleed into the next).
+- Had to tweak llama.cpp because context leaked between prompts — harness sends `cache_prompt: false` so every request gets a fresh KV cache (context isolation matters here: one dictation must never bleed into the next). The harness probably has more leaks but under a heavy time constrain it's hard to test for edge cases. 
 
 ## How I tested
 
 Spun up a Gemma container, ran the provided prompts (both via text file and manual input) against a simple system prompt, scored with the harness above.
+Total time ~ 90m with testing and README stuff, actual code took about 50m including architecture tweaks, tests surfaced some minor issues (such as prompt leak) slightly more than you wanted I'm aware but I believe it was worth it :)  

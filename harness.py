@@ -20,7 +20,7 @@ SYS_PROMPT_FILE = Path(__file__).resolve().parent / "system_prompt.txt"
 MODEL = os.environ.get("HARNESS_MODEL", "gemma-4-e2b-q4")
 MAX_TOKENS = 512  # extraction outputs are small; caps generation time on CPU, can be adjusted 
 
-OUTPUT_DIR = Path(__file__).resolve().parent.parent / "data" / "model-output"
+OUTPUT_DIR = Path(__file__).resolve().parent / "data" / "model-output"
 
 
 def assemble_prompt(user_prompt: str, system_prompt: str | None) -> list[dict]:
