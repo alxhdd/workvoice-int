@@ -56,7 +56,7 @@ Judgment calls worth flagging: in note 5 the overdue inspection lands in `defect
 ## Eval harness
 
 `harness.py` takes input, runs it through the model, saves the output.
-`compare.py` scores the saved output against gold, field by field, and writes results to `data/test-results/<output-stem>_results.csv` (one row per field + one `_entry` summary row per prompt; gold/output cells are JSON-encoded for unambiguous parsing).
+`compare.py` scores the saved output against gold, field by field, and writes results to `data/test-output/<output-stem>_results.csv` (one row per field + one `_entry` summary row per prompt; gold/output cells are JSON-encoded for unambiguous parsing).
 
 Scoring per field:
 
