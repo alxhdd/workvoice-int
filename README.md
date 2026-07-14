@@ -6,11 +6,11 @@ Task: turn messy, voice-transcribed Polish inspection notes into a fixed-schema 
 
 ```bash
 # model container (llama.cpp server) must be up on :8080
-python harness.py --prompts-file notes.txt        # or run it bare for interactive mode
-python compare.py <model_output_file> <gold_file> [--results <path.csv>]
+python harness.py ./inputs/inputs.txt        # or run it bare for interactive mode
+python compare.py <model_output_file> <gold_file> 
 ```
 
-Output lands in `data/model-output/<date>_<model>.md`; compare writes a CSV plus a human-readable markdown report to `data/test-results/`.
+Output lands in `data/model-output/<date>_<model>.md`; compare writes a CSV plus a human-readable markdown report to `data/test-output/`.
 
 ## What's here
 
@@ -99,7 +99,7 @@ We have 5 examples and a chicken-and-egg problem. Quick ideas, honestly not sure
 
 - **Track 3 (critic/retry):** designed but not built. The obvious shape: a retry that rewrites the system prompt based on the scoring notes — keep the fields that came out correct, override the prompt for the failed ones, run again. Honestly, with an SLM this may not buy much, which is part of why it got cut first.
 - **Async in the test harness:** pointless at this input size, worthwhile at larger volumes. Cosmetic, but makes life easier. Not now.
-- **Semantics are ambiguous:** some things can be enforced more but it's a question of if and what is actually needed because at this scale it's a tradeoff. 
+- **Semantics are ambiguous:** some things can be enforced more but it's a question of if and what is actually needed because at this scale it's a tradeoff. scoring atm is too rigid, needs tweaks.
 
 Next I'd test more, tweak more and look into the track4 stuff alongside track3. I'd love to see how the mobile gemma quants work for this use case (gemma is multimodal which makes it a great fit for this if it can actually run.)
 
@@ -121,7 +121,7 @@ solution is simple, use a batch or type the prompt.
 
 ## Issues hit
 
-- Had to tweak llama.cpp because context leaked between prompts — harness sends `cache_prompt: false` so every request gets a fresh KV cache (context isolation matters here: one dictation must never bleed into the next). The harness probably has more leaks but under a heavy time constrain it's hard to test for edge cases. 
+- Had to tweak llama.cpp because context leaked between prompts — harness sends `cache_prompt: false` so every request gets a fresh KV cache (context isolation matters here: one dictation must never bleed into the next). The harness probably has more leaks but under a heavy time constrain it's hard to test for edge cases. (edit: its not llama issue, look above)
 
 ## How I tested
 
