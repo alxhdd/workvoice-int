@@ -60,6 +60,13 @@ def check_server(api_url: str) -> None:
     except requests.RequestException:
         pass  # reachable but grumpy about GET / — that's fine, POST will work
 
+def unquote(text: str) -> str:
+    if len(text) >= 2 and text[0] == '"' and text[-1] == '"':
+        try:
+            return json.loads(text)
+        except json.JSONDecodeError:
+            return text[1:-1]
+    return text
 
 def output_path(model: str) -> Path:
     safe_model = re.sub(r"[^A-Za-z0-9._-]", "-", model)
@@ -86,6 +93,7 @@ def save_record(path: Path, prompt: str, output: str) -> None:
 #actual call happens here
 def run_prompt(args, system_prompt: str | None, path: Path, user_prompt: str) -> str | None:
     """Query the model with one prompt; save and return the output (None on error)."""
+    user_prompt = unquote(user_prompt.strip())
     messages = assemble_prompt(user_prompt, system_prompt)
     try:
         output = query_model(args.api_url, args.model, messages, args.timeout)

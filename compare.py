@@ -4,7 +4,7 @@ import json
 import re
 from pathlib import Path
 
-RESULTS_DIR = Path(__file__).resolve().parent.parent / "data" / "test-results"
+RESULTS_DIR = Path(__file__).resolve().parent / "data" / "test-output"
 
 # words treated as identical during comparison (semantic match, full score);
 # extend as gold-vs-output diffs surface variants that don't actually matter
@@ -57,11 +57,13 @@ def _unquote(line: str) -> str:
 
 
 def normalize_prompt(prompt: str) -> str:
-    return re.sub(r"\s+", " ", prompt).strip().lower()
-
+    text = re.sub(r"\s+", " ", prompt).strip()
+    # tolerate prompts saved/written with surrounding quotes
+    while len(text) >= 2 and text[0] == '"' and text[-1] == '"':
+        text = text[1:-1].strip()
+    return text.lower()
 
 #value normalization, no reason to punish for formatting differences especially with SLM
-
 def norm_light(text: str) -> str:
     """Case, punctuation, and whitespace-insensitive form.
 

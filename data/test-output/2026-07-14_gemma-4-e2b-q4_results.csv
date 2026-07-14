@@ -1,0 +1,46 @@
+prompt_id,prompt,field,category,score,gold,output,note
+1,"Gaśnica proszkowa sześć kilo, klatka schodowa parter, ciśnienie w normie, zielone pole, następny przegląd za rok, sprawna.",device_type,exact,1.0,"""gaśnica proszkowa""","""gaśnica proszkowa""",
+1,"Gaśnica proszkowa sześć kilo, klatka schodowa parter, ciśnienie w normie, zielone pole, następny przegląd za rok, sprawna.",location,semantic,1.0,"""klatka schodowa, parter""","""klatka schodowa parter""","semantically identical, formatting differs"
+1,"Gaśnica proszkowa sześć kilo, klatka schodowa parter, ciśnienie w normie, zielone pole, następny przegląd za rok, sprawna.",pressure_bar,exact,1.0,null,null,
+1,"Gaśnica proszkowa sześć kilo, klatka schodowa parter, ciśnienie w normie, zielone pole, następny przegląd za rok, sprawna.",capacity,exact,1.0,"""6 kg""","""6 kg""",
+1,"Gaśnica proszkowa sześć kilo, klatka schodowa parter, ciśnienie w normie, zielone pole, następny przegląd za rok, sprawna.",defects,exact,1.0,[],[],
+1,"Gaśnica proszkowa sześć kilo, klatka schodowa parter, ciśnienie w normie, zielone pole, następny przegląd za rok, sprawna.",status,exact,1.0,"""sprawna""","""sprawna""",
+1,"Gaśnica proszkowa sześć kilo, klatka schodowa parter, ciśnienie w normie, zielone pole, następny przegląd za rok, sprawna.",inspection_date,exact,1.0,null,null,
+1,"Gaśnica proszkowa sześć kilo, klatka schodowa parter, ciśnienie w normie, zielone pole, następny przegląd za rok, sprawna.",next_inspection,exact,1.0,"""za rok""","""za rok""",
+1,"Gaśnica proszkowa sześć kilo, klatka schodowa parter, ciśnienie w normie, zielone pole, następny przegląd za rok, sprawna.",_entry,OK,1.0,null,null,
+2,"Hydrant wewnętrzny numer trzy, drugie piętro, wąż przetarty trzeba wymienić, ciśnienie tylko dwa i pół bara za mało, do naprawy.",device_type,format,0.75,"""hydrant wewnętrzny nr 3""","""hydrant wewnętrzny numer trzy""","same numeric value, type/format differs"
+2,"Hydrant wewnętrzny numer trzy, drugie piętro, wąż przetarty trzeba wymienić, ciśnienie tylko dwa i pół bara za mało, do naprawy.",location,exact,1.0,"""drugie piętro""","""drugie piętro""",
+2,"Hydrant wewnętrzny numer trzy, drugie piętro, wąż przetarty trzeba wymienić, ciśnienie tylko dwa i pół bara za mało, do naprawy.",pressure_bar,exact,1.0,2.5,2.5,
+2,"Hydrant wewnętrzny numer trzy, drugie piętro, wąż przetarty trzeba wymienić, ciśnienie tylko dwa i pół bara za mało, do naprawy.",capacity,exact,1.0,null,null,
+2,"Hydrant wewnętrzny numer trzy, drugie piętro, wąż przetarty trzeba wymienić, ciśnienie tylko dwa i pół bara za mało, do naprawy.",defects,exact,1.0,"[""wąż przetarty""]","[""wąż przetarty""]",
+2,"Hydrant wewnętrzny numer trzy, drugie piętro, wąż przetarty trzeba wymienić, ciśnienie tylko dwa i pół bara za mało, do naprawy.",status,exact,1.0,"""do_naprawy""","""do_naprawy""",
+2,"Hydrant wewnętrzny numer trzy, drugie piętro, wąż przetarty trzeba wymienić, ciśnienie tylko dwa i pół bara za mało, do naprawy.",inspection_date,exact,1.0,null,null,
+2,"Hydrant wewnętrzny numer trzy, drugie piętro, wąż przetarty trzeba wymienić, ciśnienie tylko dwa i pół bara za mało, do naprawy.",next_inspection,exact,1.0,null,null,
+2,"Hydrant wewnętrzny numer trzy, drugie piętro, wąż przetarty trzeba wymienić, ciśnienie tylko dwa i pół bara za mało, do naprawy.",_entry,OK,0.969,null,null,
+3,"Gaśnica CO2 pięć kilogramów, kuchnia na zapleczu, brak plomby, waga poniżej normy, do wymiany, przegląd dzisiaj dziesiątego lipca.",device_type,exact,1.0,"""gaśnica CO2""","""gaśnica CO2""",
+3,"Gaśnica CO2 pięć kilogramów, kuchnia na zapleczu, brak plomby, waga poniżej normy, do wymiany, przegląd dzisiaj dziesiątego lipca.",location,wrong,0.0,"""kuchnia, zaplecze""","""kuchnia na zapleczu""",value does not match gold
+3,"Gaśnica CO2 pięć kilogramów, kuchnia na zapleczu, brak plomby, waga poniżej normy, do wymiany, przegląd dzisiaj dziesiątego lipca.",pressure_bar,exact,1.0,null,null,
+3,"Gaśnica CO2 pięć kilogramów, kuchnia na zapleczu, brak plomby, waga poniżej normy, do wymiany, przegląd dzisiaj dziesiątego lipca.",capacity,exact,1.0,"""5 kg""","""5 kg""",
+3,"Gaśnica CO2 pięć kilogramów, kuchnia na zapleczu, brak plomby, waga poniżej normy, do wymiany, przegląd dzisiaj dziesiątego lipca.",defects,exact,1.0,"[""brak plomby"", ""waga poniżej normy""]","[""brak plomby"", ""waga poniżej normy""]",
+3,"Gaśnica CO2 pięć kilogramów, kuchnia na zapleczu, brak plomby, waga poniżej normy, do wymiany, przegląd dzisiaj dziesiątego lipca.",status,exact,1.0,"""do_wymiany""","""do_wymiany""",
+3,"Gaśnica CO2 pięć kilogramów, kuchnia na zapleczu, brak plomby, waga poniżej normy, do wymiany, przegląd dzisiaj dziesiątego lipca.",inspection_date,exact,1.0,"""10 lipca""","""10 lipca""",
+3,"Gaśnica CO2 pięć kilogramów, kuchnia na zapleczu, brak plomby, waga poniżej normy, do wymiany, przegląd dzisiaj dziesiątego lipca.",next_inspection,exact,1.0,null,null,
+3,"Gaśnica CO2 pięć kilogramów, kuchnia na zapleczu, brak plomby, waga poniżej normy, do wymiany, przegląd dzisiaj dziesiątego lipca.",_entry,OK,0.875,null,null,
+4,"Hydrant zewnętrzny przy wjeździe, ciśnienie siedem bar wszystko w porządku, sprawny, następny przegląd lipiec dwa tysiące dwadzieścia siedem.",device_type,exact,1.0,"""hydrant zewnętrzny""","""hydrant zewnętrzny""",
+4,"Hydrant zewnętrzny przy wjeździe, ciśnienie siedem bar wszystko w porządku, sprawny, następny przegląd lipiec dwa tysiące dwadzieścia siedem.",location,wrong,0.0,"""wjazd""","""przy wjeździe""",value does not match gold
+4,"Hydrant zewnętrzny przy wjeździe, ciśnienie siedem bar wszystko w porządku, sprawny, następny przegląd lipiec dwa tysiące dwadzieścia siedem.",pressure_bar,exact,1.0,7,7,
+4,"Hydrant zewnętrzny przy wjeździe, ciśnienie siedem bar wszystko w porządku, sprawny, następny przegląd lipiec dwa tysiące dwadzieścia siedem.",capacity,exact,1.0,null,null,
+4,"Hydrant zewnętrzny przy wjeździe, ciśnienie siedem bar wszystko w porządku, sprawny, następny przegląd lipiec dwa tysiące dwadzieścia siedem.",defects,exact,1.0,[],[],
+4,"Hydrant zewnętrzny przy wjeździe, ciśnienie siedem bar wszystko w porządku, sprawny, następny przegląd lipiec dwa tysiące dwadzieścia siedem.",status,exact,1.0,"""sprawny""","""sprawny""",
+4,"Hydrant zewnętrzny przy wjeździe, ciśnienie siedem bar wszystko w porządku, sprawny, następny przegląd lipiec dwa tysiące dwadzieścia siedem.",inspection_date,exact,1.0,null,null,
+4,"Hydrant zewnętrzny przy wjeździe, ciśnienie siedem bar wszystko w porządku, sprawny, następny przegląd lipiec dwa tysiące dwadzieścia siedem.",next_inspection,exact,1.0,"""lipiec 2027""","""lipiec 2027""",
+4,"Hydrant zewnętrzny przy wjeździe, ciśnienie siedem bar wszystko w porządku, sprawny, następny przegląd lipiec dwa tysiące dwadzieścia siedem.",_entry,OK,0.875,null,null,
+5,"Znaczy tam gaśnica jest, korytarz pierwsze piętro, no data przeglądu minęła w zeszłym miesiącu, reszta wygląda ok.",device_type,exact,1.0,"""gaśnica""","""gaśnica""",
+5,"Znaczy tam gaśnica jest, korytarz pierwsze piętro, no data przeglądu minęła w zeszłym miesiącu, reszta wygląda ok.",location,exact,1.0,"""korytarz, pierwsze piętro""","""korytarz, pierwsze piętro""",
+5,"Znaczy tam gaśnica jest, korytarz pierwsze piętro, no data przeglądu minęła w zeszłym miesiącu, reszta wygląda ok.",pressure_bar,exact,1.0,null,null,
+5,"Znaczy tam gaśnica jest, korytarz pierwsze piętro, no data przeglądu minęła w zeszłym miesiącu, reszta wygląda ok.",capacity,exact,1.0,null,null,
+5,"Znaczy tam gaśnica jest, korytarz pierwsze piętro, no data przeglądu minęła w zeszłym miesiącu, reszta wygląda ok.",defects,partial,0.25,"[""data przeglądu minęła""]",[],'data przeglądu minęła': missing
+5,"Znaczy tam gaśnica jest, korytarz pierwsze piętro, no data przeglądu minęła w zeszłym miesiącu, reszta wygląda ok.",status,hallucination,0.0,null,"""sprawna""","gold is null, model invented a value"
+5,"Znaczy tam gaśnica jest, korytarz pierwsze piętro, no data przeglądu minęła w zeszłym miesiącu, reszta wygląda ok.",inspection_date,hallucination,0.0,null,"""zeszły miesiąc""","gold is null, model invented a value"
+5,"Znaczy tam gaśnica jest, korytarz pierwsze piętro, no data przeglądu minęła w zeszłym miesiącu, reszta wygląda ok.",next_inspection,exact,1.0,null,null,
+5,"Znaczy tam gaśnica jest, korytarz pierwsze piętro, no data przeglądu minęła w zeszłym miesiącu, reszta wygląda ok.",_entry,OK,0.656,null,null,
